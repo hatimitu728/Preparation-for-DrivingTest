@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運転免許 学科試験対策</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <div id="start-screen">
+            <h1>運転免許 学科試験対策クイズ</h1>
+            <button id="start-button">クイズ開始</button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div id="progress-container">
+                <p>第 <span id="question-number">1</span> / 15 問</p>
+            </div>
+            <div id="question-area">
+                <p id="question-text"></p>
+            </div>
+            <div id="answer-buttons">
+                <button id="maru-btn" class="choice-btn">〇</button>
+                <button id="batsu-btn" class="choice-btn">✕</button>
+            </div>
+            <div id="result-area" class="hidden">
+                <p id="result-text"></p>
+                <div id="explanation-area">
+                    <p><strong>【解説】</strong></p>
+                    <p id="explanation-text"></p>
+                </div>
+                <button id="next-btn">次の問題へ</button>
+            </div>
+        </div>
+        
+        <div id="final-result-screen" class="hidden">
+            <h2>結果発表</h2>
+            <p>あなたの正答率は <span id="final-score">0</span>% です。</p>
+            <div id="chart-container">
+                <canvas id="category-chart"></canvas>
+            </div>
+            
+            <!-- 追加：苦手分野の分析・アドバイスエリア -->
+            <div id="advice-area">
+                <h3>苦手分野の分析とアドバイス</h3>
+                <ul id="advice-list"></ul>
+            </div>
+
+            <p id="result-message"></p>
+            <button id="retry-button">もう一度挑戦する</button>
+        </div>
+    </div>
+
+    <!-- Chart.jsライブラリの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
